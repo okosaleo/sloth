@@ -31,7 +31,7 @@ export default function Loader() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-primary-bg">
       <div className='relative w-[150px] h-[150px] mb-4'>
-       <Image src="/soh.png" alt='Koala Logo' fill />
+       <Image src="https://utfs.io/f/MyBJHXY8aJsOS2KmH9WimRJdxk6aPTCH0YyQGBOlWEbsU5c2" alt='Koala Logo' fill />
        </div>
        <div className='line [clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] flex flex-row '>
       <h1 className="text-4xl font-Nohemi font-bold mb-8 text-text-color relative will-change-transform translate-y-[75px]" >Sloth</h1>

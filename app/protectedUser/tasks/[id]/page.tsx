@@ -1,6 +1,7 @@
 import BoostButton from "@/components/BoostChannel";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
+import RetweetButton from "@/components/RetweetButton";
 import TimerButton from "@/components/TimedButton";
 import TopTasks from "@/components/TopTasks";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -22,6 +23,7 @@ const getData = async (id:bigint)=>{
     const userDetails : any = await getData(params.id)
     const xUrl= "https://x.com/slothupfam?s=11"
     const boostUrl = "https://t.me/boost/RealslothHouse"
+    const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -58,9 +60,9 @@ const getData = async (id:bigint)=>{
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm ">Tweet about Sloth🦥</p>
+                <p className="font-Nohemi text-text-color text-sm ">Reweet Sloth🦥</p>
                 </div>
-                <TimerButton telegramId={userDetails.json.telegramId} />
+                <RetweetButton telegramId={userDetails.json.telegramId} retweetUrl={retweetUrl} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">

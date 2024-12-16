@@ -40,7 +40,7 @@ export default function ProtectedPageUser({ params }: { params: { id: string } }
         <WalletConnect />
       </div>
       <div className="relative w-[120px] h-[120px] mb-4">
-        <Image src="/soh.png" alt="Koala Logo" fill />
+        <Image src="https://utfs.io/f/MyBJHXY8aJsOS2KmH9WimRJdxk6aPTCH0YyQGBOlWEbsU5c2" alt="Koala Logo" fill />
       </div>
       <div className="flex flex-col border-[1.5px] border-text-color rounded-md mb-16">
         <div className="flex flex-row items-center text-4xl font-Nohemi text-text-color gap-2 p-3">
