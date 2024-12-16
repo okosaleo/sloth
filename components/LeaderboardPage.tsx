@@ -1,5 +1,5 @@
 "use client";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import TrophyPage from "@/components/Trophy";
 import Image from "next/image";
 import LoadingLottie from "./LoadingLottie";
@@ -23,7 +23,10 @@ const LeaderboardPage = () => {
     "/api/user/top",
     fetcher,
     {
-      refreshInterval: 5000, // Poll every 5 seconds
+      refreshInterval: 3000, // Poll every 3 seconds
+      dedupingInterval: 0,
+      revalidateOnFocus: true,
+      revalidateOnReconnect: true,
     }
   );
 
@@ -72,8 +75,15 @@ const LeaderboardPage = () => {
         ))}
       </div>
       {isValidating && <p className="text-text-color text-sm mt-2">Updating...</p>}
+      <button
+        onClick={() => mutate("/api/user/top")}
+        className="mt-4 px-4 py-2 bg-button-color text-white rounded-md"
+      >
+        Refresh Leaderboard
+      </button>
     </div>
   );
 };
 
 export default LeaderboardPage;
+
