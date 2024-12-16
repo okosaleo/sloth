@@ -27,7 +27,7 @@ export default function Home() {
   }, [])
 
   const checkAuth = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/session`)
+      const response = await fetch("/api/session")
       if (response.ok) {
           setIsAuthenticated(true)
       }
@@ -39,7 +39,7 @@ export default function Home() {
       const initData = WebApp.initData
       if (initData) {
           try {
-              const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth`, {
+              const response = await fetch("/api/auth", {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json',
