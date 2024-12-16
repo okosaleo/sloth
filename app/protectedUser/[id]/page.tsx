@@ -5,9 +5,8 @@ import Image from 'next/image';
 import { ArrowRight, MedalIcon, UsersRound } from "lucide-react";
 import WalletConnect from "@/components/WalletConnect";
 import KoalaLottie from "@/components/koalaLottie";
-import Lottie from 'lottie-react';
-import Sloth from "../../../public/lottie/sloth.json"
 import Link from 'next/link';
+import LoadingLottie from '@/components/LoadingLottie';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -30,7 +29,7 @@ export default function ProtectedPageUser({ params }: { params: { id: string } }
 
   if (!userDetails || !userPoints) {
     return <div className='font-Nohemi text-base flex items-center flex-col gap-2 justify-center h-screen text-text-color'>
-      <Lottie  animationData={Sloth} loop={true} className="w-[120px] h-[120px]" />
+     <LoadingLottie />
       Loading...</div>;
   }
 

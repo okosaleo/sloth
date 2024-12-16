@@ -1,10 +1,9 @@
 "use client";
 import FriendComponent from "@/components/Friends";
 import { initUtils } from "@telegram-apps/sdk";
-import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
-import Sloth from "../../../../public/lottie/sloth.json"
+import LoadingLottie from "@/components/LoadingLottie";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -83,7 +82,7 @@ export default function Friends({ params }: { params: { id: string } }) {
 
   if (isLoading) {
     return <div className='font-Nohemi text-base flex items-center flex-col gap-2 justify-center h-screen text-text-color'>
-      <Lottie  animationData={Sloth} loop={true} className="w-[120px] h-[120px]" />
+     <LoadingLottie />
       Loading...</div>;
   }
 
