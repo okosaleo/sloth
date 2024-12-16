@@ -4,16 +4,14 @@ import TrophyPage from "@/components/Trophy";
 import Image from "next/image";
 import LoadingLottie from "./LoadingLottie";
 
-
 type User = {
   id: string;
   username: string | null;
   points: number;
 };
 
-// Fetcher function for SWR
 const fetcher = async (url: string) => {
-  const res = await fetch(url, { cache: "no-store" }); // Ensure fresh data on every request
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -21,9 +19,12 @@ const fetcher = async (url: string) => {
 };
 
 const LeaderboardPage = () => {
-  const { data, error } = useSWR<{ topUsers: User[]; totalCount: number }>(
+  const { data, error, isValidating } = useSWR<{ topUsers: User[]; totalCount: number }>(
     "/api/user/top",
-    fetcher
+    fetcher,
+    {
+      refreshInterval: 5000, // Poll every 5 seconds
+    }
   );
 
   if (error) {
@@ -31,16 +32,19 @@ const LeaderboardPage = () => {
   }
 
   if (!data) {
-    return <div className='font-Nohemi text-base flex items-center flex-col gap-2 justify-center h-screen text-text-color'>
+    return (
+      <div className="font-Nohemi text-base flex items-center flex-col gap-2 justify-center h-screen text-text-color">
         <LoadingLottie />
-    Loading...</div>;
+        Loading...
+      </div>
+    );
   }
 
   const { topUsers, totalCount } = data;
 
   return (
     <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
-      <div className="flex flex-col items-center justify-center gap-2 ">
+      <div className="flex flex-col items-center justify-center gap-2">
         <TrophyPage />
         <h1 className="font-Nohemi text-text-color text-2xl">LeaderBoard</h1>
       </div>
@@ -67,6 +71,7 @@ const LeaderboardPage = () => {
           </div>
         ))}
       </div>
+      {isValidating && <p className="text-text-color text-sm mt-2">Updating...</p>}
     </div>
   );
 };
