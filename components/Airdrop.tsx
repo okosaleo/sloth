@@ -11,7 +11,7 @@ export default function Airdrop() {
         <h1 className="font-Nohemi text-2xl text-text-color">Claim your rewards!</h1>
         <h2 className="font-Nohemi text-sm text-button-color">Coming soon....</h2>
         </div>
-        <Link href="/protectedUser/airdrop/roadmap" className=" mt-16 rounded-md bg-button-color font-Nohemi text-text-color p-4">Check our Roadmap!</Link>
+        <Link href="/protectedUser/airdrop" className=" mt-16 rounded-md bg-button-color font-Nohemi text-text-color p-4">Check our Roadmap!</Link>
 
     </div>
   )

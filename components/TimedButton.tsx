@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 declare global {
   interface Window {
-    show_8617144?: () => Promise<void>;
+    show_8665123?: () => Promise<void>;
   }
 }
 
@@ -18,12 +18,12 @@ const TimerButton: React.FC<TimerButtonProps> = ({ telegramId }) => {
 
   // Load the ad script on component mount
   useEffect(() => {
-    if (window.show_8617144) return;
+    if (window.show_8665123) return;
 
     const script = document.createElement("script");
     script.src = "//niphaumeenses.net/vignette.min.js";
-    script.dataset.zone = "8617144";
-    script.dataset.sdk = "show_8617144";
+    script.dataset.zone = "8665123";
+    script.dataset.sdk = "show_8665123";
     document.body.appendChild(script);
   }, []);
 
@@ -70,9 +70,9 @@ const TimerButton: React.FC<TimerButtonProps> = ({ telegramId }) => {
     if (hasClicked) return;
 
     try {
-      if (window.show_8617144) {
+      if (window.show_8665123) {
         // Display the ad
-        await window.show_8617144();
+        await window.show_8665123();
 
         // Start cooldown timer (60 seconds)
         const cooldownTime = 60;
