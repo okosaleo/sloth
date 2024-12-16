@@ -13,7 +13,7 @@ export default function Friends({ params }: { params: { id: string } }) {
   const [initData, setInitData] = useState("");
   const [username, setUsername] = useState<string | undefined>("");
   const [userId, setUserId] = useState("");
-  const INVITE_URL = "http://t.me/RealSloth_bot/start";
+  const INVITE_URL = "http://t.me/RealSloth_bot/Sloth/start";
 
   const { data, error, isLoading} = useSWR(
     `${apiUrl}/api/referrals/${params.id}`,
