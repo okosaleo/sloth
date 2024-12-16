@@ -12,7 +12,7 @@ export default function TelegramAuth() {
     }, [])
 
     const checkAuth = async () => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/session`)
+        const response = await fetch("/api/session")
         if (response.ok) {
             setIsAuthenticated(true)
         }

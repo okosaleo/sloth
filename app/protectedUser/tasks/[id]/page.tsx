@@ -42,12 +42,6 @@ const getData = async (id:bigint)=>{
             <CardContent className="flex flex-col gap-2">
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Join our Community🦥</p>
-                </div>
-                <TimerButton telegramId={userDetails.json.telegramId}  />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Put🦥 in your username</p>
                 </div>
                 <EmojiCheckButton telegramId={userDetails.json.telegramId} />

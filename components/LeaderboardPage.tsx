@@ -22,7 +22,7 @@ const fetcher = async (url: string) => {
 
 const LeaderboardPage = () => {
   const { data, error } = useSWR<{ topUsers: User[]; totalCount: number }>(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/user/top`,
+    "/api/user/top",
     fetcher
   );
 

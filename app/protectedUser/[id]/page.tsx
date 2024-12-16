@@ -11,15 +11,14 @@ import LoadingLottie from '@/components/LoadingLottie';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ProtectedPageUser({ params }: { params: { id: string } }) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const { data: userDetails, error: userError } = useSWR(
-    `${apiUrl}/api/user/${params.id}`,
+    `/api/user/${params.id}`,
     fetcher
   );
 
   const { data: userPoints, error: pointsError, isValidating } = useSWR(
-    `${apiUrl}/api/points/${params.id}`,
+    `/api/points/${params.id}`,
     fetcher,
   );
 
