@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+   url     = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id         String     @id @default(cuid())
+  telegramId BigInt     @unique
+  username   String?
+  firstName  String?
+  lastName   String?
+  points     Int        @default(0)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  referrals  Referral[] @relation("UserReferrals")
+}
+
+model Referral {
+  id               String  @id @default(cuid())
+  userId           String  // The referred user's ID
+  referrerId       BigInt  // The referrer's Telegram ID
+  referrerUsername String? // Optional username of the referrer
+  createdAt        DateTime @default(now())
+
+  // Relations
+  referrer User @relation("UserReferrals", fields: [referrerId], references: [telegramId])
+
+  // Prevent a user from being referred by the same referrer more than once
+  @@unique([userId, referrerId])
+}
+
+
