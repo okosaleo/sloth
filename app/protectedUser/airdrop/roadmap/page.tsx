@@ -3,7 +3,7 @@ import React from 'react';
 
 const Roadmap = () => {
   return (
-    <div className="container mx-auto p-8 font-Nohemi text-text-color overflow-y-scroll h-fit">
+    <div className="container mx-auto p-8 font-Nohemi text-text-color overflow-y-scroll h-fit mb-20">
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">
         Sloth Airdrop Roadmap
       </h1>
