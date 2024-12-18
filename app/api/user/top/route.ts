@@ -7,7 +7,7 @@ export async function GET() {
     const [topUsers, totalCount] = await Promise.all([
       prisma.user.findMany({
         orderBy: { points: 'desc' },
-        take: 50,
+        take: 20,
       }),
       prisma.user.count(),
     ]);

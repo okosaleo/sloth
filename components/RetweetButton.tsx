@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface TimerButtonProps {
@@ -51,11 +52,11 @@ const RetweetButton: React.FC<TimerButtonProps> = ({ telegramId, retweetUrl }) =
     <button
       onClick={handleClick}
       className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-        hasClicked ? "bg-button-color cursor-not-allowed" : "bg-button-color"
+        hasClicked ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? "✅" : "1200 Sloth"}
+      {hasClicked ? <Check className="size-3 bg-text-color" />: "1200 Sloth"}
     </button>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import WebApp from "@twa-dev/sdk";
-import { Loader2 } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface EmojiCheckButtonProps {
@@ -78,11 +78,11 @@ const EmojiCheckButton: React.FC<EmojiCheckButtonProps> = ({ telegramId }) => {
       <button
         onClick={handleClick}
         className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-          hasClicked || loading ? "bg-button-color cursor-not-allowed" : "bg-button-color"
+          hasClicked || loading ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
         }`}
         disabled={hasClicked || loading}
       >
-        {loading ?  <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? "✅" : "2000 Sloth"}
+        {loading ?  <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Check className="size-3 bg-text-color" /> : "2000 Sloth"}
       </button>
       {error && <p className="text-[#db1e1ee5] mt-2 font-Nohemi text-[10px]">{error}</p>}
     </div>
