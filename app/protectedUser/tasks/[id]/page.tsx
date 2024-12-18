@@ -1,6 +1,7 @@
 import BoostButton from "@/components/BoostChannel";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
+import JoinCommunity from "@/components/JoinCommunity";
 import RetweetButton from "@/components/RetweetButton";
 import TimerButton from "@/components/TimedButton";
 import TopTasks from "@/components/TopTasks";
@@ -24,6 +25,7 @@ const getData = async (id:bigint)=>{
     const xUrl= "https://x.com/slothupfam?s=11"
     const boostUrl = "https://t.me/boost/RealslothHouse"
     const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
+    const telegramUrl = "https://t.me/RealslothHouse"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -60,7 +62,13 @@ const getData = async (id:bigint)=>{
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Watch an ad for 100 sloth</p>
+                <p className="font-Nohemi text-text-color text-sm ">Join our telegram Community🦥</p>
+                </div>
+                <JoinCommunity telegramId={userDetails.json.telegramId} telegramUrl={telegramUrl} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Earn 100 Sloths every minute</p>
                 <p className="font-Nohemi text-[10px] text-[#db1e1ee5]">Wait till the timer on the ad page finishes to get your rewards.</p>
                 </div>
                 <TimerButton telegramId={userDetails.json.telegramId} />
