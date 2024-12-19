@@ -27,7 +27,7 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
       });
 
       if (!response.ok) {
-        throw new Error("Failed to check referrals");
+        throw new Error("You haven't invited enough users");
       }
 
       const data = await response.json();
