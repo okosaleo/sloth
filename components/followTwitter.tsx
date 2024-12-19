@@ -1,6 +1,5 @@
 "use client";
 
-import { CheckCheck } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface TimerButtonProps {
@@ -52,11 +51,11 @@ const FollowButton: React.FC<TimerButtonProps> = ({ telegramId, xUrl }) => {
     <button
       onClick={handleClick}
       className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-        hasClicked ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
+        hasClicked ? "bg-button-color cursor-not-allowed" : "bg-button-color"
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? "✔️" : "2000 Sloth"}
+      {hasClicked ? "✅" : "2000 Sloth"}
     </button>
   );
 };
