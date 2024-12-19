@@ -76,7 +76,7 @@ const LeaderboardPage = () => {
       </div>
       {isValidating && <p className="text-text-color text-sm mt-2">.</p>}
       <button
-        onClick={() => mutate(`${process.env.NEXT_PUBLIC_API_URL}/api/user/top`)}
+        onClick={() => mutate("/api/user/top")}
         className="mt-4 px-4 py-2 bg-button-color font-Nohemi  text-text-color rounded-md"
       >
         Refresh Leaderboard
