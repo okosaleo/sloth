@@ -11,11 +11,13 @@ interface TimerButtonProps {
 const RetweetButton: React.FC<TimerButtonProps> = ({ telegramId, retweetUrl }) => {
   const [hasClicked, setHasClicked] = useState(false);
 
-  // Load state from LocalStorage
   useEffect(() => {
-    const clickedState = localStorage.getItem(`hasClicked_${telegramId}`);
-    if (clickedState === "true") {
-      setHasClicked(true);
+    // Check if we're running in the browser
+    if (typeof window !== "undefined") {
+      const clickedState = localStorage.getItem(`hasClicked_${telegramId}`);
+      if (clickedState === "true") {
+        setHasClicked(true);
+      }
     }
   }, [telegramId]);
 
@@ -23,7 +25,9 @@ const RetweetButton: React.FC<TimerButtonProps> = ({ telegramId, retweetUrl }) =
     if (hasClicked) return;
 
     setHasClicked(true);
-    localStorage.setItem(`hasClicked_${telegramId}`, "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem(`hasClicked_${telegramId}`, "true");
+    }
 
     try {
       // Notify backend to increment points
@@ -38,12 +42,16 @@ const RetweetButton: React.FC<TimerButtonProps> = ({ telegramId, retweetUrl }) =
       }
 
       // Redirect to external URL
-      window.location.href = retweetUrl;
+      if (typeof window !== "undefined") {
+        window.location.href = retweetUrl;
+      }
     } catch (error) {
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`hasClicked_${telegramId}`);
+      if (typeof window !== "undefined") {
+        localStorage.removeItem(`hasClicked_${telegramId}`);
+      }
       setHasClicked(false);
     }
   };
@@ -56,7 +64,7 @@ const RetweetButton: React.FC<TimerButtonProps> = ({ telegramId, retweetUrl }) =
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? <CheckCheck className="size-3 bg-text-color" />: "1200 Sloth"}
+      {hasClicked ? <CheckCheck className="size-3 bg-text-color" /> : "1200 Sloth"}
     </button>
   );
 };
