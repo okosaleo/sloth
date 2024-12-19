@@ -56,7 +56,7 @@ const FollowButton: React.FC<TimerButtonProps> = ({ telegramId, xUrl }) => {
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? <CheckCheck className="size-3 bg-text-color" /> : "2000 Sloth"}
+      {hasClicked ? "✔️" : "2000 Sloth"}
     </button>
   );
 };

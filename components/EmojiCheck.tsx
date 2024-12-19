@@ -82,7 +82,7 @@ const EmojiCheckButton: React.FC<EmojiCheckButtonProps> = ({ telegramId }) => {
         }`}
         disabled={hasClicked || loading}
       >
-        {loading ?  <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <CheckCheck className="size-3 bg-text-color" /> : "2000 Sloth"}
+        {loading ?  <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? "✔️": "2000 Sloth"}
       </button>
       {error && <p className="text-[#db1e1ee5] mt-2 font-Nohemi text-[10px]">{error}</p>}
     </div>
