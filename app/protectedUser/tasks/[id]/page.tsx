@@ -42,6 +42,13 @@ const getData = async (id:bigint)=>{
           <Card className="border-[1px] border-text-color">
             <CardHeader className="font-Nohemi text-xl text-text-color">Earn some sloths here!</CardHeader>
             <CardContent className="flex flex-col gap-2">
+            <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Earn 100 Sloths every minute</p>
+                <p className="font-Nohemi text-[10px] text-[#db1e1ee5]">Wait till the timer on the ad page finishes to get your rewards.</p>
+                </div>
+                <TimerButton telegramId={userDetails.json.telegramId} />
+              </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Put🦥 in your username</p>
@@ -65,13 +72,6 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm ">Join our telegram Community🦥</p>
                 </div>
                 <JoinCommunity telegramId={userDetails.json.telegramId} telegramUrl={telegramUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Earn 100 Sloths every minute</p>
-                <p className="font-Nohemi text-[10px] text-[#db1e1ee5]">Wait till the timer on the ad page finishes to get your rewards.</p>
-                </div>
-                <TimerButton telegramId={userDetails.json.telegramId} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
