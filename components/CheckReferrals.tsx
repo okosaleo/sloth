@@ -55,7 +55,7 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
       >
         {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "5000 Sloth"}
       </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
+      {error && <p className="text-[#db1e1ee5] font-Nohemi text-[10px] mt-2">{error}</p>}
     </div>
   );
 };

@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
         where: { referrerId: BigInt(telegramId) },
       });
   
-      if (referralsCount < 3) {
+      if (referralsCount < 10) {
         console.log(`Referrals count for ${telegramId}: ${referralsCount}`);
         return NextResponse.json(
           { success: false, message: "You haven't referred enough users." },
