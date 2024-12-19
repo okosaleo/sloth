@@ -1,6 +1,7 @@
 "use client";
 
 import WebApp from "@twa-dev/sdk";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 interface TimerButtonProps {
@@ -71,11 +72,11 @@ const BoostButton: React.FC<TimerButtonProps> = ({ telegramId, boostUrl }) => {
     <button
       onClick={handleClick}
       className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-        hasClicked ? "bg-button-color cursor-not-allowed" : "bg-button-color"
+        hasClicked ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? "✅ Boosted" : "1000 Sloth"}
+      {hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "1000 Sloth"}
     </button>
   );
 };
