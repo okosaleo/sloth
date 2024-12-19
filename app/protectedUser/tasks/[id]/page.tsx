@@ -1,4 +1,5 @@
 import BoostButton from "@/components/BoostChannel";
+import CheckReferralsButton from "@/components/CheckReferrals";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
 import JoinCommunity from "@/components/JoinCommunity";
@@ -72,6 +73,12 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm ">Join our telegram Community🦥</p>
                 </div>
                 <JoinCommunity telegramId={userDetails.json.telegramId} telegramUrl={telegramUrl} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm ">Refer 10 users for Sloth🦥</p>
+                </div>
+                <CheckReferralsButton telegramId={userDetails.json.telegramId} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
