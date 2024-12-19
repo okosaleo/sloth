@@ -82,7 +82,6 @@ export default function Home() {
         setBLoading(false)
     
         if (response.ok) {
-          alert("Welcome to Sloth");
           return router.push(`/protectedUser/${user.id}`);
         } else {
           return router.push(`/protectedUser/${user.id}`);

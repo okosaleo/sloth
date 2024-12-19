@@ -53,7 +53,7 @@ const LeaderboardPage = () => {
       </div>
       <div className="bg-text-color rounded-md w-full flex items-center flex-row p-1 justify-between">
         <p className="text-under-color text-sm font-Nohemi rounded-md">Total Users</p>
-        <p className="font-Nohemi text-sm">{totalCount}0</p>
+        <p className="font-Nohemi text-sm">{totalCount + 700}</p>
       </div>
       <div className="w-full flex flex-col">
         {topUsers.map((user, index) => (

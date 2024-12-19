@@ -2,7 +2,7 @@
 
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface CheckReferralsButtonProps {
   telegramId: bigint;
@@ -12,6 +12,17 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Unique key for storing state in localStorage
+  const localStorageKey = `checkReferrals_${telegramId}`;
+
+  // Load initial state from localStorage
+  useEffect(() => {
+    const storedState = localStorage.getItem(localStorageKey);
+    if (storedState === "true") {
+      setHasClicked(true);
+    }
+  }, [localStorageKey]);
 
   const handleCheckReferrals = async () => {
     if (hasClicked || loading) return;
@@ -33,7 +44,7 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
       const data = await response.json();
       if (data.success) {
         setHasClicked(true);
-        alert("Congratulations! You've earned 5000 points!");
+        localStorage.setItem(localStorageKey, "true");
       } else {
         throw new Error(data.message || "You haven't referred enough users.");
       }
@@ -53,7 +64,13 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
         }`}
         disabled={hasClicked || loading}
       >
-        {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "5000 Sloth"}
+        {loading ? (
+          <Loader2 className="mr-2 size-4 animate-spin" />
+        ) : hasClicked ? (
+          <Image src="/check.svg" alt="" width={14} height={14} />
+        ) : (
+          "5000 Sloth"
+        )}
       </button>
       {error && <p className="text-[#db1e1ee5] font-Nohemi text-[10px] mt-2">{error}</p>}
     </div>
@@ -61,3 +78,4 @@ const CheckReferralsButton: React.FC<CheckReferralsButtonProps> = ({ telegramId 
 };
 
 export default CheckReferralsButton;
+
