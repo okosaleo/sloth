@@ -1,7 +1,7 @@
 "use client";
 
 import WebApp from "@twa-dev/sdk";
-import { Check } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface TimerButtonProps {
@@ -76,7 +76,7 @@ const BoostButton: React.FC<TimerButtonProps> = ({ telegramId, boostUrl }) => {
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? <Check className="size-3 bg-text-color" /> : "1000 Sloth"}
+      {hasClicked ? <CheckCheck className="size-4 bg-text-color" /> : "1000 Sloth"}
     </button>
   );
 };
