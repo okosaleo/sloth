@@ -1,3 +1,4 @@
+import AnotherRetweetButton from "@/components/AnotherRetweet";
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import EmojiCheckButton from "@/components/EmojiCheck";
@@ -25,8 +26,9 @@ const getData = async (id:bigint)=>{
     const userDetails : any = await getData(params.id)
     const xUrl= "https://x.com/slothupfam?s=11"
     const boostUrl = "https://t.me/boost/RealslothHouse"
-    const retweetUrl = "https://x.com/slothupfam/status/1868778588709044401?s=46&t=7XhUpaocxGD005ZNFokjmQ"
+    const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const telegramUrl = "https://t.me/RealslothHouse"
+    const newRetweetUrl = "https://x.com/slothupfam/status/1869654847320121553?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -64,9 +66,15 @@ const getData = async (id:bigint)=>{
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm ">Reweet Sloth🦥</p>
+                <p className="font-Nohemi text-text-color text-sm ">Reweet pinned Sloth post🦥</p>
                 </div>
                 <RetweetButton telegramId={userDetails.json.telegramId} retweetUrl={retweetUrl} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm ">Like and Retweet the post🦥</p>
+                </div>
+                <AnotherRetweetButton telegramId={userDetails.json.telegramId} newrRtweetUrl={newRetweetUrl} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
