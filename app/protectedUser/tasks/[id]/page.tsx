@@ -25,7 +25,7 @@ const getData = async (id:bigint)=>{
     const userDetails : any = await getData(params.id)
     const xUrl= "https://x.com/slothupfam?s=11"
     const boostUrl = "https://t.me/boost/RealslothHouse"
-    const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
+    const retweetUrl = "https://x.com/slothupfam/status/1868778588709044401?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const telegramUrl = "https://t.me/RealslothHouse"
     return (
 
