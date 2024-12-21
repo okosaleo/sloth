@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${santa.variable} antialiased bg-primary-bg`}
       >
-        <TonConnectUIProvider manifestUrl="https://utfs.io/f/MyBJHXY8aJsO2hNWPqUN4mZo1hAKUVHFL7qWybYT6v80QrCj">
+        <TonConnectUIProvider manifestUrl="https://utfs.io/f/MyBJHXY8aJsOU6aDBEmI6zvSuD3Gh0sdF8RTErCnwkZJ4XqA">
         {children}
         </TonConnectUIProvider>
       </body>
