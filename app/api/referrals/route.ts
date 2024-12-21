@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       where: { telegramId: referrerIdBigInt },
       data: {
         points: {
-          increment: 200, // Add 200 points to the referrer's total points
+          increment: 400, // Add 200 points to the referrer's total points
         },
       },
     });
