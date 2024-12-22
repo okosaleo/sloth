@@ -41,7 +41,7 @@ const Roadmap = () => {
       </section>
 
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Phase 5: Airdrop Conclusion & Future Plans</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Phase 5: Airdrop Conclusion & Future Plans.</h2>
         <ul className="list-disc pl-6 text-gray-700">
           <li>Wrap up airdrop distribution</li>
           <li>Analyze feedback from participants</li>
