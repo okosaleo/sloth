@@ -12,6 +12,10 @@ export async function GET(req: NextRequest,{params} : {params: {id: string} }) {
           where: {
             telegramId,
           },
+          select: {
+            username: true,
+            telegramId: true,
+          }
         });
         console.log(user)
   
