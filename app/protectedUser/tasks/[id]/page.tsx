@@ -4,6 +4,7 @@ import CheckReferralsButton from "@/components/CheckReferrals";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
 import JoinCommunity from "@/components/JoinCommunity";
+import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
 import TimerButton from "@/components/TimedButton";
 import TopTasks from "@/components/TopTasks";
@@ -29,6 +30,7 @@ const getData = async (id:bigint)=>{
     const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const telegramUrl = "https://t.me/RealslothHouse"
     const newRetweetUrl = "https://x.com/slothupfam/status/1869654847320121553?s=46&t=7XhUpaocxGD005ZNFokjmQ"
+    const reactUrl = "https://t.me/RealslothHouse/18"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -94,6 +96,12 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-[10px] text-[#db1e1ee5]">Must be a telegram premium user</p>
                 </div>
                 <BoostButton telegramId={userDetails.json.telegramId} boostUrl={boostUrl} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">React to post on channel</p>
+                </div>
+                <ReactCommunity telegramId={userDetails.json.telegramId} reactUrl={reactUrl} />
               </div>
             </CardContent>
           </Card>
