@@ -56,7 +56,7 @@ const ReactCommunity: React.FC<TimerButtonProps> = ({ telegramId, reactUrl}) => 
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "1000 Sloth"}
+      {hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "100 Sloth"}
     </button>
   );
 };
