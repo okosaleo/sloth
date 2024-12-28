@@ -48,6 +48,8 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
       // Optionally: revert click state if needed
       localStorage.removeItem(`hasCli_${telegramId}`);
       setHasClicked(false);
+    } finally {
+        setLoading(false)
     }
   };
 
