@@ -50,7 +50,6 @@ const LeaderboardPage = () => {
       <div className="flex flex-col items-center justify-center gap-2">
         <TrophyPage />
         <h1 className="font-Nohemi text-text-color text-2xl">LeaderBoard</h1>
-        <h4 className="mt-5 font-Nohemi text-button-color text-[10px]">Refreshes every 24 hours</h4>
       </div>
       <div className="bg-text-color rounded-md w-full flex items-center flex-row p-1 justify-between">
         <p className="text-under-color text-sm font-Nohemi rounded-md">Total Users</p>
