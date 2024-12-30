@@ -1,8 +1,7 @@
-"use client";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Cookies  from "js-cookie";  // Import js-cookie library
+import Cookies from "js-cookie";  // Import js-cookie library
 
 interface TimerButtonProps {
   telegramId: string;
@@ -15,18 +14,19 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
 
   // Load state from Cookies
   useEffect(() => {
-    const clickedState = Cookies.get(`hasCli_${telegramId}`);
+    const clickedState = Cookies.get(`hasCli_${telegramId}`);  // Ensure proper key formatting
     if (clickedState === "true") {
       setHasClicked(true);
     }
   }, [telegramId]);
 
   const handleClick = async () => {
-    if (hasClicked || loading) return;
+    if (hasClicked || loading) return; // Prevent multiple clicks while loading or if already clicked
     setLoading(true);
-
     setHasClicked(true);
-    Cookies.set(`hasCli_${telegramId}`, "true"); // Set the cookie instead of localStorage
+
+    // Set the cookie to store the state permanently
+    Cookies.set(`hasCli_${telegramId}`, "true", { expires: 365, path: "" }); // Cookie persists for 1 year
 
     try {
       // Notify backend to increment points
@@ -46,7 +46,7 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      Cookies.remove(`hasCli_${telegramId}`); // Remove cookie on error
+      Cookies.remove(`hasCli_${telegramId}`); // Remove cookie on error (optional)
       setHasClicked(false);
     } finally {
       setLoading(false);
