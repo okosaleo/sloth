@@ -1,8 +1,7 @@
-"use client";
-
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Cookies  from "js-cookie";  // Import js-cookie library
 
 interface TimerButtonProps {
   telegramId: string;
@@ -13,9 +12,9 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Load state from LocalStorage
+  // Load state from Cookies
   useEffect(() => {
-    const clickedState = localStorage.getItem(`hasCli_${telegramId}`);
+    const clickedState = Cookies.get(`hasCli_${telegramId}`);
     if (clickedState === "true") {
       setHasClicked(true);
     }
@@ -26,7 +25,7 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
     setLoading(true);
 
     setHasClicked(true);
-    localStorage.setItem(`hasCli_${telegramId}`, "true");
+    Cookies.set(`hasCli_${telegramId}`, "true"); // Set the cookie instead of localStorage
 
     try {
       // Notify backend to increment points
@@ -46,10 +45,10 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`hasCli_${telegramId}`);
+      Cookies.remove(`hasCli_${telegramId}`); // Remove cookie on error
       setHasClicked(false);
     } finally {
-        setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -61,7 +60,7 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
       }`}
       disabled={hasClicked}
     >
-      {loading ?  <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "1200 Sloth"}
+      {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "1200 Sloth"}
     </button>
   );
 };

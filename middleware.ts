@@ -3,7 +3,9 @@ import type { NextRequest } from 'next/server'
 import { getSession, updateSession } from './utils/session'
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/protectedUser')) {
+
+  if (request.nextUrl.pathname.startsWith('/protectedUser')  || 
+  request.nextUrl.pathname.startsWith('/api/points')) {
     const session = await getSession()
     const userId = session
     console.log(userId)
@@ -17,5 +19,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/protectedUser/:path*', '/api/:path*'],
+  matcher: ['/protectedUser/:path*', '/api/points'],
 }
