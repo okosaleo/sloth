@@ -42,3 +42,20 @@ model Referral {
 }
 
 
+model ButtonState {
+  id          String     @id @default(cuid())
+  telegramId  BigInt   @unique
+  hasClicked  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TwitterCheck {
+  id          String    @id @default(cuid())
+  telegramId  BigInt   @unique
+  hasClicked  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+

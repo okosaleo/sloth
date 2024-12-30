@@ -2,10 +2,9 @@
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Cookies from "js-cookie";  // Import js-cookie library
 
 interface TimerButtonProps {
-  telegramId: string;
+  telegramId: string;  // Telegram ID is a string but represents BigInt in database
   thirdRetweetUrl: string;
 }
 
@@ -13,12 +12,17 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Load state from Cookies
+  // Load state from the backend API
   useEffect(() => {
-    const clickedState = Cookies.get(`hasCli_${telegramId}`);  // Ensure proper key formatting
-    if (clickedState === "true") {
-      setHasClicked(true);
-    }
+    const fetchButtonState = async () => {
+      const response = await fetch(`/api/points/button-state?telegramId=${telegramId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setHasClicked(data.clicked);
+      }
+    };
+
+    fetchButtonState();
   }, [telegramId]);
 
   const handleClick = async () => {
@@ -26,11 +30,8 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
     setLoading(true);
     setHasClicked(true);
 
-    // Set the cookie to store the state permanently
-    Cookies.set(`hasCli_${telegramId}`, "true", { expires: 365, path: "" }); // Cookie persists for 1 year
-
     try {
-      // Notify backend to increment points
+      // Notify the backend to increment points
       const response = await fetch("/api/points", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -41,13 +42,17 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
         throw new Error("Failed to update points");
       }
 
+      // Notify backend to update the button state in the database
+      await fetch(`/api/points/button-state`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ telegramId, clicked: true }),
+      });
+
       // Redirect to external URL
       window.location.href = thirdRetweetUrl;
     } catch (error) {
       console.error("Error updating points:", error);
-
-      // Optionally: revert click state if needed
-      Cookies.remove(`hasCli_${telegramId}`); // Remove cookie on error (optional)
       setHasClicked(false);
     } finally {
       setLoading(false);
@@ -68,3 +73,4 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
 };
 
 export default ThirdRetweetButton;
+
