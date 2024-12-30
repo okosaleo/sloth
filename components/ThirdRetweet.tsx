@@ -56,12 +56,12 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
 
   return (
     <button
-      onClick={handleClick}
-      className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-        hasClicked ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
-      }`}
-      disabled={hasClicked}
-    >
+        onClick={handleClick}
+        className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
+          hasClicked || loading ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
+        }`}
+        disabled={hasClicked || loading}
+      >
       {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "1200 Sloth"}
     </button>
   );

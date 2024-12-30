@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie"; 
+import { Loader2 } from "lucide-react";
 
 interface TimerButtonProps {
   telegramId: string;
@@ -10,20 +12,22 @@ interface TimerButtonProps {
 
 const FollowButton: React.FC<TimerButtonProps> = ({ telegramId, xUrl }) => {
   const [hasClicked, setHasClicked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Load state from LocalStorage
   useEffect(() => {
-    const clickedState = localStorage.getItem(`hasClicked_${telegramId}`);
+    const clickedState = Cookies.get(`hasfollow_${telegramId}`);  // Ensure proper key formatting
     if (clickedState === "true") {
       setHasClicked(true);
     }
   }, [telegramId]);
 
   const handleClick = async () => {
-    if (hasClicked) return;
-
+    if (hasClicked || loading) return;
+    setLoading(true);
     setHasClicked(true);
-    localStorage.setItem(`hasClicked_${telegramId}`, "true");
+   
+    Cookies.set(`hasfollow_${telegramId}`, "true", { expires: 365, path: "" });
 
     try {
       // Notify backend to increment points
@@ -43,20 +47,22 @@ const FollowButton: React.FC<TimerButtonProps> = ({ telegramId, xUrl }) => {
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`hasClicked_${telegramId}`);
+      Cookies.remove(`hasfollow_${telegramId}`);
       setHasClicked(false);
-    }
+    } finally {
+      setLoading(false)
+    } 
   };
 
   return (
     <button
-      onClick={handleClick}
-      className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
-        hasClicked ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
-      }`}
-      disabled={hasClicked}
-    >
-      {hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "2000 Sloth"}
+    onClick={handleClick}
+    className={`text-text-color text-[12px] font-bold p-2 rounded-md ${
+      hasClicked || loading ? "bg-primary-bg cursor-not-allowed" : "bg-button-color"
+    }`}
+    disabled={hasClicked || loading}
+  >
+       {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "2000 Sloth"}
     </button>
   );
 };

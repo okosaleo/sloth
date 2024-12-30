@@ -4,6 +4,7 @@ import WebApp from "@twa-dev/sdk";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie"; 
 
 interface EmojiCheckButtonProps {
   telegramId: string;
@@ -24,8 +25,6 @@ const EmojiCheckButton: React.FC<EmojiCheckButtonProps> = ({ telegramId }) => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const localStorageKey = `emojiCheck_${telegramId}`;
-
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user as UserData);
@@ -33,11 +32,12 @@ const EmojiCheckButton: React.FC<EmojiCheckButtonProps> = ({ telegramId }) => {
   }, []);
 
   useEffect(() => {
-    const clickedState = localStorage.getItem(localStorageKey);
+    const clickedState = Cookies.get(`hasEmoji_${telegramId}`);  // Ensure proper key formatting
     if (clickedState === "true") {
       setHasClicked(true);
     }
-  }, [localStorageKey]);
+  }, [telegramId]);
+
 
   const updatePoints = async () => {
     const response = await fetch("/api/points", {
@@ -57,18 +57,18 @@ const EmojiCheckButton: React.FC<EmojiCheckButtonProps> = ({ telegramId }) => {
     setLoading(true);
     setError(null);
 
+    Cookies.set(`hasEmoji_${telegramId}`, "true", { expires: 365, path: "" });
     try {
       if (userData?.first_name?.includes("🦥")) {
         await updatePoints();
         setHasClicked(true);
-        localStorage.setItem(localStorageKey, "true");
       } else {
         throw new Error("Username does not contain the sloth emoji");
       }
     } catch (err: any) {
       setError(err.message || "An error occurred");
       setHasClicked(false);
-      localStorage.removeItem(localStorageKey);
+      Cookies.remove(`hasEmoji_${telegramId}`);
     } finally {
       setLoading(false);
     }
