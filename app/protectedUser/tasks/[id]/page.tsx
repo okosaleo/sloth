@@ -1,4 +1,4 @@
-import AnotherRetweetButton from "@/components/AnotherRetweet";
+
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import EmojiCheckButton from "@/components/EmojiCheck";
@@ -30,7 +30,6 @@ const getData = async (id:bigint)=>{
     const boostUrl = "https://t.me/boost/RealslothHouse"
     const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const telegramUrl = "https://t.me/RealslothHouse"
-    const newRetweetUrl = "https://x.com/slothupfam/status/1869654847320121553?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const reactUrl = "https://t.me/RealslothHouse/18"
     const thirdRetweetUrl = "https://x.com/slothupfam/status/1873020767652188580?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     return (
@@ -73,12 +72,6 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm ">Reweet pinned Sloth post🦥</p>
                 </div>
                 <RetweetButton telegramId={userDetails.json.telegramId} retweetUrl={retweetUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm ">Like and Retweet the post🦥</p>
-                </div>
-                <AnotherRetweetButton telegramId={userDetails.json.telegramId} newrRtweetUrl={newRetweetUrl} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">

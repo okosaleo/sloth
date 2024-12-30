@@ -15,7 +15,7 @@ const ThirdRetweetButton: React.FC<TimerButtonProps> = ({ telegramId, thirdRetwe
   // Load state from the backend API
   useEffect(() => {
     const fetchButtonState = async () => {
-      const response = await fetch(`/api/points/button-state?telegramId=${telegramId}`);
+      const response = await fetch(`/api/points/bnt?telegramId=${telegramId}`);
       if (response.ok) {
         const data = await response.json();
         setHasClicked(data.clicked);
