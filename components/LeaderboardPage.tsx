@@ -20,7 +20,7 @@ const fetcher = async (url: string) => {
 
 const LeaderboardPage = () => {
   const { data, error, isValidating } = useSWR<{ topUsers: User[]; totalCount: number }>(
-    "/api/user/top",
+    "/api/top",
     fetcher,
     {
       refreshInterval: 20000, // Poll every 3 seconds
