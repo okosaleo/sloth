@@ -3,6 +3,7 @@ import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
+import FollowYoutube from "@/components/FollowYoutube";
 import JoinCommunity from "@/components/JoinCommunity";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
@@ -12,6 +13,8 @@ import TimerButton from "@/components/TimedButton";
 import TopTasks from "@/components/TopTasks";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Youtube } from "lucide-react";
+import Image from "next/image";
 
 
 
@@ -34,6 +37,7 @@ const getData = async (id:bigint)=>{
     const reactUrl = "https://t.me/RealslothHouse/18"
     const thirdRetweetUrl = "https://x.com/slothupfam/status/1873020767652188580?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const taskUrl = "https://x.com/slothupfam/status/1875173594340463043?s=46&t=7XhUpaocxGD005ZNFokjmQ"
+    const youUrl = "https://youtube.com/@slothupfam?si=CFfa2GF9zCZOpZlZ"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -111,6 +115,12 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Like and Retweet our latest post</p>
                 </div>
                 <Task telegramId={userDetails.json.telegramId} taskUrl={taskUrl} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Follow Sloth Youtube Channel <Image src="/youtube.svg" alt="youtube icon" width={20} height={20} /></p>
+                </div>
+                <FollowYoutube telegramId={userDetails.json.telegramId} youUrl={youUrl} />
               </div>
             </CardContent>
           </Card>
