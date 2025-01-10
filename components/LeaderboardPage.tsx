@@ -38,7 +38,7 @@ const LeaderboardPage = () => {
     return (
       <div className="font-Nohemi text-base flex items-center flex-col gap-2 justify-center h-screen text-text-color">
         <LoadingLottie />
-        Loading..
+        Loading...
       </div>
     );
   }
