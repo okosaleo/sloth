@@ -19,15 +19,9 @@ const fetcher = async (url: string) => {
 };
 
 const LeaderboardPage = () => {
-  const { data, error, isValidating } = useSWR<{ topUsers: User[]; totalCount: number }>(
+  const { data, error } = useSWR<{ topUsers: User[]; totalCount: number }>(
     "/api/top",
     fetcher,
-    {
-      refreshInterval: 20000, // Poll every 3 seconds
-      dedupingInterval: 0,
-      revalidateOnFocus: true,
-      revalidateOnReconnect: true,
-    }
   );
 
   if (error) {
@@ -74,7 +68,6 @@ const LeaderboardPage = () => {
           </div>
         ))}
       </div>
-      {isValidating && <p className="text-text-color text-sm mt-2">.</p>}
     </div>
   );
 };
