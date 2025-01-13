@@ -19,9 +19,10 @@ const fetcher = async (url: string) => {
 };
 
 const LeaderboardPage = () => {
-  const { data, error } = useSWR<{ topUsers: User[]; totalCount: number }>(
+  const { data, error, isValidating } = useSWR<{ topUsers: User[]; totalCount: number }>(
     "/api/top",
     fetcher,
+    { refreshInterval: 510000 } // Polling every 5 seconds
   );
 
   if (error) {
@@ -49,6 +50,9 @@ const LeaderboardPage = () => {
         <p className="text-under-color text-sm font-Nohemi rounded-md">Total Users</p>
         <p className="font-Nohemi text-sm">{totalCount}</p>
       </div>
+      {isValidating && (
+        <div className="text-sm text-gray-500 font-Nohemi">.</div>
+      )}
       <div className="w-full flex flex-col">
         {topUsers.map((user, index) => (
           <div
@@ -57,7 +61,7 @@ const LeaderboardPage = () => {
           >
             <div className="bg-primary-bg flex flex-row gap-2">
               <div className="rounded-md w-12 h-12 bg-primary-bg relative">
-                <Image src="/soh.png" alt="sloth image" fill />
+                <Image src="https://utfs.io/f/MyBJHXY8aJsOoI30Pw5QuvZpqTRkMswtfUH90KnFjmgbXV52" alt="sloth image" fill />
               </div>
               <div className="flex flex-col">
                 <p className="text-[12px] font-Nohemi text-text-color">{user.username}</p>
@@ -73,4 +77,5 @@ const LeaderboardPage = () => {
 };
 
 export default LeaderboardPage;
+
 
