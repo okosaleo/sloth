@@ -43,7 +43,7 @@ export default function ProtectedPageUser({ params }: { params: { id: string } }
       <div className="flex flex-col border-[1.5px] border-text-color rounded-md mb-16">
         <div className="flex flex-row items-center text-4xl font-Nohemi text-text-color gap-2 p-3">
           <p>{userPoints.points}</p> <span className="text-sm">Sloth</span>
-          {isValidating && <span className="text-xs ml-2">.</span>}
+          {isValidating && <span className="text-xs ml-2"></span>}
         </div>
         <hr />
         <div className="flex-row p-3 flex items-center justify-center border-t-[1px] border-text-color w-full">
