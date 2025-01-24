@@ -137,10 +137,10 @@ const getData = async (id:bigint)=>{
         <TabsContent value="partners">
         <Card className="border-[1px] border-text-color">
         <CardContent className="flex flex-col gap-2">
-        <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+        <div className="flex flex-row items-center p-2 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-row gap-2 w-2/3">
                 <div>
-                  <Image src="https://cxkj2amfyu.ufs.sh/f/MyBJHXY8aJsOO1I9LwT1fCsztcergvSbJqn8iNWmMuLkTwo3" alt="deluck image" width={30} height={30} />
+                  <Image src="https://utfs.io/f/MyBJHXY8aJsOO1I9LwT1fCsztcergvSbJqn8iNWmMuLkTwo3" alt="deluck image" width={40} height={40} />
                 </div>
                 <p className="font-Nohemi text-text-color text-[12px]">Join Deluck Bot and complete a task.</p>
                 </div>
