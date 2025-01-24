@@ -140,7 +140,7 @@ const getData = async (id:bigint)=>{
         <div className="flex flex-row items-center p-2 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-row gap-2 w-2/3">
                 <div>
-                  <Image src="https://utfs.io/f/MyBJHXY8aJsOO1I9LwT1fCsztcergvSbJqn8iNWmMuLkTwo3" alt="deluck image" width={40} height={40} />
+                  <Image src="https://utfs.io/f/MyBJHXY8aJsOO1I9LwT1fCsztcergvSbJqn8iNWmMuLkTwo3" alt="deluck image" width={90} height={90} />
                 </div>
                 <p className="font-Nohemi text-text-color text-[12px]">Join Deluck Bot and complete a task.</p>
                 </div>
