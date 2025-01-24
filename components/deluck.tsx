@@ -1,5 +1,6 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -10,6 +11,7 @@ interface TimerButtonProps {
 
 const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
   const [hasClicked, setHasClicked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Load state from LocalStorage
   useEffect(() => {
@@ -45,6 +47,8 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
       // Optionally: revert click state if needed
       localStorage.removeItem(`deluck_${telegramId}`);
       setHasClicked(false);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,7 +60,7 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
       }`}
       disabled={hasClicked}
     >
-      {hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "20000 Sloth"}
+         {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "20000 Sloth"}
     </button>
   );
 };
