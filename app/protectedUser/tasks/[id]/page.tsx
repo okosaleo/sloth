@@ -1,7 +1,6 @@
 
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
-import Deluck from "@/components/deluck";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
@@ -40,7 +39,6 @@ const getData = async (id:bigint)=>{
     const taskUrl = "https://x.com/slothupfam/status/1875173594340463043?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const youUrl = "https://youtube.com/@slothupfam?si=CFfa2GF9zCZOpZlZ"
     const neRetweet = "https://x.com/slothupfam/status/1878390637944287355?s=46&t=7XhUpaocxGD005ZNFokjmQ";
-    const deluckUrl = "https://t.me/deluckbot/app?startapp=JLNNQ11L-"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -137,15 +135,7 @@ const getData = async (id:bigint)=>{
         <TabsContent value="partners">
         <Card className="border-[1px] border-text-color">
         <CardContent className="flex flex-col gap-2">
-        <div className="flex flex-row items-center p-2 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-row gap-2 w-2/3">
-                <div>
-                  <Image src="https://utfs.io/f/MyBJHXY8aJsOO1I9LwT1fCsztcergvSbJqn8iNWmMuLkTwo3" alt="deluck image" width={90} height={90} />
-                </div>
-                <p className="font-Nohemi text-text-color text-[12px]">Join Deluck Bot and complete a task.</p>
-                </div>
-                <Deluck telegramId={userDetails.json.telegramId} deluckUrl={deluckUrl} />
-              </div>
+        Nothing to see here!
           </CardContent>
         </Card>
         </TabsContent>
