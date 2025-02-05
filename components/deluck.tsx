@@ -15,7 +15,7 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
 
   // Load state from LocalStorage
   useEffect(() => {
-    const clickedState = localStorage.getItem(`deluck_${telegramId}`);
+    const clickedState = localStorage.getItem(`storm_${telegramId}`);
     if (clickedState === "true") {
       setHasClicked(true);
     }
@@ -25,7 +25,7 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
     if (hasClicked) return;
 
     setHasClicked(true);
-    localStorage.setItem(`deluck_${telegramId}`, "true");
+    localStorage.setItem(`storm_${telegramId}`, "true");
 
     try {
       // Notify backend to increment points
@@ -45,7 +45,7 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`deluck_${telegramId}`);
+      localStorage.removeItem(`storm_${telegramId}`);
       setHasClicked(false);
     } finally {
       setLoading(false);
