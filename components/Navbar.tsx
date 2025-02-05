@@ -55,7 +55,7 @@ export default function Navbar() {
       },
       {
         id: 5,
-        title: "Airdrop",
+        title: "Roadmap",
         url: "/protectedUser/airdrop",
         icon: HandCoins
      },
