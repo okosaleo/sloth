@@ -1,6 +1,7 @@
 
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
+import Deluck from "@/components/deluck";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
@@ -8,6 +9,7 @@ import JoinCommunity from "@/components/JoinCommunity";
 import Latest from "@/components/latestRt";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
+import StormCommunity from "@/components/StormCon";
 import Task from "@/components/Tassk";
 import ThirdRetweetButton from "@/components/ThirdRetweet";
 import TimerButton from "@/components/TimedButton";
@@ -39,6 +41,8 @@ const getData = async (id:bigint)=>{
     const taskUrl = "https://x.com/slothupfam/status/1875173594340463043?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const youUrl = "https://youtube.com/@slothupfam?si=CFfa2GF9zCZOpZlZ"
     const neRetweet = "https://x.com/slothupfam/status/1878390637944287355?s=46&t=7XhUpaocxGD005ZNFokjmQ";
+    const stormUrl = "https://t.me/StormTradeBot/academy?startapp=2m6KH9YPGDg1xGw1F3trW8hRHhncxtsCWvkB3p4Vo6h"
+    const stormTask = "https://t.me/+ZZfRPrExxT9jMTUy"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -99,6 +103,13 @@ const getData = async (id:bigint)=>{
                 </div>
                 <BoostButton telegramId={userDetails.json.telegramId} boostUrl={boostUrl} />
               </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="youtube icon" width={100} height={100} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Join Storm Trade news channel</p>
+                </div>
+                <StormCommunity telegramId={userDetails.json.telegramId} stormUrl={stormTask}  />
+              </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">React to post on channel</p>
@@ -135,7 +146,13 @@ const getData = async (id:bigint)=>{
         <TabsContent value="partners">
         <Card className="border-[1px] border-text-color">
         <CardContent className="flex flex-col gap-2">
-        Nothing to see here!
+        <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={100} height={100} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Run Storm Trade Bot</p>
+                </div>
+                <Deluck telegramId={userDetails.json.telegramId} deluckUrl={stormUrl} />
+              </div>
           </CardContent>
         </Card>
         </TabsContent>
