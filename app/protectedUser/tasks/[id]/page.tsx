@@ -104,7 +104,7 @@ const getData = async (id:bigint)=>{
                 <BoostButton telegramId={userDetails.json.telegramId} boostUrl={boostUrl} />
               </div>
               <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
-              <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="youtube icon" width={100} height={100} className="rounded-md" />
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="youtube icon" width={60} height={60} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Join Storm Trade news channel</p>
                 </div>
@@ -146,8 +146,8 @@ const getData = async (id:bigint)=>{
         <TabsContent value="partners">
         <Card className="border-[1px] border-text-color">
         <CardContent className="flex flex-col gap-2">
-        <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-          <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={100} height={100} className="rounded-md" />
+        <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={60} height={60} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Run Storm Trade Bot</p>
                 </div>
