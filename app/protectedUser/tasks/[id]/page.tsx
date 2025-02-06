@@ -2,8 +2,8 @@
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
-import Erax from "@/components/deluck copy";
 import EmojiCheckButton from "@/components/EmojiCheck";
+import Erax from "@/components/Erax";
 import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
 import JoinCommunity from "@/components/JoinCommunity";
