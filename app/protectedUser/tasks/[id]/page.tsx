@@ -1,4 +1,5 @@
 
+import Bee from "@/components/Bee";
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
@@ -47,6 +48,7 @@ const getData = async (id:bigint)=>{
     const stormTask = "https://t.me/+ZZfRPrExxT9jMTUy"
     const optimus = "https://t.me/optimus_x_bot/app?startapp=94538a1c77"
     const eraxUrl = "https://t.me/the_eraxbot?start=5808920156"
+    const beeUrl = "https://t.me/Bee_coinbot"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -170,6 +172,13 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Complete a task on Erax Bot</p>
                 </div>
                 <Erax telegramId={userDetails.json.telegramId} eraxUrl={eraxUrl} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOdTN8FfQ9W02NcG3YMTnxIeOJzbPESFj5lkrU" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Earn with BeeCoin Bot</p>
+                </div>
+                <Bee telegramId={userDetails.json.telegramId} beeUrl={beeUrl} />
               </div>
           </CardContent>
         </Card>
