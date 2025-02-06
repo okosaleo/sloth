@@ -7,6 +7,7 @@ import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
 import JoinCommunity from "@/components/JoinCommunity";
 import Latest from "@/components/latestRt";
+import Optimus from "@/components/Optimus";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
 import StormCommunity from "@/components/StormCon";
@@ -43,6 +44,7 @@ const getData = async (id:bigint)=>{
     const neRetweet = "https://x.com/slothupfam/status/1878390637944287355?s=46&t=7XhUpaocxGD005ZNFokjmQ";
     const stormUrl = "https://t.me/StormTradeBot/academy?startapp=2m6KH9YPGDg1xGw1F3trW8hRHhncxtsCWvkB3p4Vo6h"
     const stormTask = "https://t.me/+ZZfRPrExxT9jMTUy"
+    const optimus = "https://t.me/optimus_x_bot/app?startapp=94538a1c77"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -152,6 +154,13 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Run Storm Trade Bot</p>
                 </div>
                 <Deluck telegramId={userDetails.json.telegramId} deluckUrl={stormUrl} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOu86gALVC6xK3W2UBQrvSP5M8IamutpnX0ZLf" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Complete a task on OptimusX Bot</p>
+                </div>
+                <Optimus telegramId={userDetails.json.telegramId} optimus={optimus} />
               </div>
           </CardContent>
         </Card>
