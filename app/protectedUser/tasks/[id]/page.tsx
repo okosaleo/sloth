@@ -167,7 +167,7 @@ const getData = async (id:bigint)=>{
               <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
           <Image src="https://utfs.io/f/MyBJHXY8aJsOMzoz0SY8aJsOutwXjmSMfqzbU6AeEd4Pvhx1" alt="storm Image" width={40} height={40} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Complete a task on OptimusX Bot</p>
+                <p className="font-Nohemi text-text-color text-sm">Complete a task on Erax Bot</p>
                 </div>
                 <Erax telegramId={userDetails.json.telegramId} eraxUrl={eraxUrl} />
               </div>
