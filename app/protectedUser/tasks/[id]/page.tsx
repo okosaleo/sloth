@@ -2,6 +2,7 @@
 import BoostButton from "@/components/BoostChannel";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
+import Erax from "@/components/deluck copy";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
@@ -45,6 +46,7 @@ const getData = async (id:bigint)=>{
     const stormUrl = "https://t.me/StormTradeBot/academy?startapp=2m6KH9YPGDg1xGw1F3trW8hRHhncxtsCWvkB3p4Vo6h"
     const stormTask = "https://t.me/+ZZfRPrExxT9jMTUy"
     const optimus = "https://t.me/optimus_x_bot/app?startapp=94538a1c77"
+    const eraxUrl = "https://t.me/the_eraxbot?start=5808920156"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -161,6 +163,13 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Complete a task on OptimusX Bot</p>
                 </div>
                 <Optimus telegramId={userDetails.json.telegramId} optimus={optimus} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOMzoz0SY8aJsOutwXjmSMfqzbU6AeEd4Pvhx1" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Complete a task on OptimusX Bot</p>
+                </div>
+                <Erax telegramId={userDetails.json.telegramId} eraxUrl={eraxUrl} />
               </div>
           </CardContent>
         </Card>

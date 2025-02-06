@@ -15,7 +15,7 @@ const Optimus: React.FC<TimerButtonProps> = ({ telegramId, optimus }) => {
 
   // Load state from LocalStorage
   useEffect(() => {
-    const clickedState = localStorage.getItem(`storm_${telegramId}`);
+    const clickedState = localStorage.getItem(`optimus_${telegramId}`);
     if (clickedState === "true") {
       setHasClicked(true);
     }
@@ -25,14 +25,14 @@ const Optimus: React.FC<TimerButtonProps> = ({ telegramId, optimus }) => {
     if (hasClicked) return;
 
     setHasClicked(true);
-    localStorage.setItem(`storm_${telegramId}`, "true");
+    localStorage.setItem(`optimus_${telegramId}`, "true");
 
     try {
       // Notify backend to increment points
       const response = await fetch("/api/points", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ telegramId, points: 20000 }),
+        body: JSON.stringify({ telegramId, points: 5000 }),
       });
 
       if (!response.ok) {
@@ -45,7 +45,7 @@ const Optimus: React.FC<TimerButtonProps> = ({ telegramId, optimus }) => {
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`storm_${telegramId}`);
+      localStorage.removeItem(`optimus_${telegramId}`);
       setHasClicked(false);
     } finally {
       setLoading(false);
@@ -60,7 +60,7 @@ const Optimus: React.FC<TimerButtonProps> = ({ telegramId, optimus }) => {
       }`}
       disabled={hasClicked}
     >
-         {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "20000 Sloth"}
+         {loading ? <Loader2 className="mr-2 size-4 animate-spin" /> : hasClicked ? <Image src="/check.svg" alt="" width={14} height={14} /> : "5000 Sloth"}
     </button>
   );
 };

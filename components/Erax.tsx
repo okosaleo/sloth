@@ -6,16 +6,16 @@ import { useState, useEffect } from "react";
 
 interface TimerButtonProps {
   telegramId: string;
-  deluckUrl: string;
+  eraxUrl: string;
 }
 
-const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
+const Erax: React.FC<TimerButtonProps> = ({ telegramId, eraxUrl }) => {
   const [hasClicked, setHasClicked] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // Load state from LocalStorage
   useEffect(() => {
-    const clickedState = localStorage.getItem(`storm_${telegramId}`);
+    const clickedState = localStorage.getItem(`erax_${telegramId}`);
     if (clickedState === "true") {
       setHasClicked(true);
     }
@@ -25,7 +25,7 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
     if (hasClicked) return;
 
     setHasClicked(true);
-    localStorage.setItem(`storm_${telegramId}`, "true");
+    localStorage.setItem(`erax_${telegramId}`, "true");
 
     try {
       // Notify backend to increment points
@@ -40,12 +40,12 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
       }
 
       // Redirect to external URL
-      window.location.href = deluckUrl;
+      window.location.href = eraxUrl;
     } catch (error) {
       console.error("Error updating points:", error);
 
       // Optionally: revert click state if needed
-      localStorage.removeItem(`storm_${telegramId}`);
+      localStorage.removeItem(`erax_${telegramId}`);
       setHasClicked(false);
     } finally {
       setLoading(false);
@@ -65,4 +65,4 @@ const Deluck: React.FC<TimerButtonProps> = ({ telegramId, deluckUrl }) => {
   );
 };
 
-export default Deluck;
+export default Erax;
