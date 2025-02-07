@@ -153,15 +153,15 @@ const getData = async (id:bigint)=>{
                 <FollowYoutube telegramId={userDetails.json.telegramId} youUrl={youUrl} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-row w-2/3">
-                <Image src="https://utfs.io/f/MyBJHXY8aJsOjld1OaqIeYApcJNRqk90SdhbC7jZGzLQ4vBw" alt="youtube icon" width={30} height={30} />
+                <div className="flex flex-row gap-1 w-2/3">
+                <Image src="https://utfs.io/f/MyBJHXY8aJsOjld1OaqIeYApcJNRqk90SdhbC7jZGzLQ4vBw" className="rounded-md" alt="youtube icon" width={30} height={30} />
                 <p className="font-Nohemi text-text-color text-sm">Follow SHARKS For $SHARKS Airdrop </p>
                 </div>
                 <ShaCommunity telegramId={userDetails.json.telegramId} telegramUrl={shaCon} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-row w-2/3">
-                <Image src="https://utfs.io/f/MyBJHXY8aJsOzY49mJRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" alt="youtube icon" width={30} height={30} />
+                <div className="flex flex-row gap-1 w-2/3">
+                <Image src="https://utfs.io/f/MyBJHXY8aJsOzY49mJRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" className="rounded-md" alt="youtube icon" width={30} height={30} />
                 <p className="font-Nohemi text-text-color text-sm">Join CAPtcha TG Channel </p>
                 </div>
                 <Community telegramId={userDetails.json.telegramId} telegramUrl={captha} />
