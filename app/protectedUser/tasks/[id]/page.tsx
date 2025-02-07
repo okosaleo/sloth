@@ -1,6 +1,7 @@
 
 import Bee from "@/components/Bee";
 import BoostButton from "@/components/BoostChannel";
+import Community from "@/components/captch";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
 import EmojiCheckButton from "@/components/EmojiCheck";
@@ -12,6 +13,8 @@ import Latest from "@/components/latestRt";
 import Optimus from "@/components/Optimus";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
+import ShaCommunity from "@/components/Sha";
+import Shark from "@/components/Shark";
 import StormCommunity from "@/components/StormCon";
 import Task from "@/components/Tassk";
 import ThirdRetweetButton from "@/components/ThirdRetweet";
@@ -49,6 +52,9 @@ const getData = async (id:bigint)=>{
     const optimus = "https://t.me/optimus_x_bot/app?startapp=94538a1c77"
     const eraxUrl = "https://t.me/the_eraxbot?start=5808920156"
     const beeUrl = "https://t.me/Bee_coinbot"
+    const sharkUrl = "https://t.me/captcha_airdrop_bot"
+    const captha = 'https://t.me/CAPtchaANN'
+    const shaCon = "https://x.com/thesharks_emoji?s=21"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -110,7 +116,7 @@ const getData = async (id:bigint)=>{
                 <BoostButton telegramId={userDetails.json.telegramId} boostUrl={boostUrl} />
               </div>
               <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
-              <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="youtube icon" width={40} height={40} className="rounded-md" />
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOGcTMhxblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="youtube icon" width={30} height={30} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Join Storm Trade news channel</p>
                 </div>
@@ -146,6 +152,20 @@ const getData = async (id:bigint)=>{
                 </div>
                 <FollowYoutube telegramId={userDetails.json.telegramId} youUrl={youUrl} />
               </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-row w-2/3">
+                <Image src="https://utfs.io/f/MyBJHXY8aJsOjld1OaqIeYApcJNRqk90SdhbC7jZGzLQ4vBw" alt="youtube icon" width={30} height={30} />
+                <p className="font-Nohemi text-text-color text-sm">Follow SHARKS For $SHARKS Airdrop </p>
+                </div>
+                <ShaCommunity telegramId={userDetails.json.telegramId} telegramUrl={shaCon} />
+              </div>
+              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
+                <div className="flex flex-row w-2/3">
+                <Image src="https://utfs.io/f/MyBJHXY8aJsOzY49mJRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" alt="youtube icon" width={30} height={30} />
+                <p className="font-Nohemi text-text-color text-sm">Join CAPtcha TG Channel </p>
+                </div>
+                <Community telegramId={userDetails.json.telegramId} telegramUrl={captha} />
+              </div>
             </CardContent>
           </Card>
           </TabsContent>
@@ -179,6 +199,14 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Earn with BeeCoin Bot</p>
                 </div>
                 <Bee telegramId={userDetails.json.telegramId} beeUrl={beeUrl} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOzY49mJRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Play CAPtcha
+                </p>
+                </div>
+                <Shark telegramId={userDetails.json.telegramId} sharkUrl={sharkUrl} />
               </div>
           </CardContent>
         </Card>
