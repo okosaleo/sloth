@@ -10,6 +10,8 @@ import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
 import JoinCommunity from "@/components/JoinCommunity";
 import Latest from "@/components/latestRt";
+import Money from "@/components/money";
+import MoneyCommunity from "@/components/MoneyCom";
 import Optimus from "@/components/Optimus";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
@@ -55,6 +57,8 @@ const getData = async (id:bigint)=>{
     const sharkUrl = "https://t.me/captcha_airdrop_bot"
     const captha = 'https://t.me/CAPtchaANN'
     const shaCon = "https://x.com/thesharks_emoji?s=21"
+    const moneyUrl = 'https://t.me/brrrrrgamebot?start=67a620e26fc5be461c2024fe'
+    const moneygroup = 'https://t.me/brrrrren'
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -166,6 +170,13 @@ const getData = async (id:bigint)=>{
                 </div>
                 <Community telegramId={userDetails.json.telegramId} telegramUrl={captha} />
               </div>
+              <div className="flex flex-row items-center gap-1 p-3 justify-between border-b-[1.5px] border-text-color">
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOzXI6KhRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" className="rounded-md" alt="youtube icon" width={30} height={30} />
+                <div className="flex flex-row gap-1 w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Brrrrr Community </p>
+                </div>
+                <MoneyCommunity telegramId={userDetails.json.telegramId} telegramUrl={moneygroup} />
+              </div>
             </CardContent>
           </Card>
           </TabsContent>
@@ -207,6 +218,14 @@ const getData = async (id:bigint)=>{
                 </p>
                 </div>
                 <Shark telegramId={userDetails.json.telegramId} sharkUrl={sharkUrl} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOzXI6KhRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Play  Brrrrr
+                </p>
+                </div>
+                <Money telegramId={userDetails.json.telegramId} moneyUrl={moneyUrl} />
               </div>
           </CardContent>
         </Card>
