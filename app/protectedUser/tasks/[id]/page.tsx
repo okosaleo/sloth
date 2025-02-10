@@ -182,7 +182,7 @@ const getData = async (id:bigint)=>{
                 <MoneyCommunity telegramId={userDetails.json.telegramId} telegramUrl={moneygroup} />
               </div>
               <div className="flex flex-row items-center gap-1 p-3 justify-between border-b-[1.5px] border-text-color">
-              <Image src="https://ufts.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" className="rounded-md" alt="youtube icon" width={30} height={30} />
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" className="rounded-md" alt="youtube icon" width={30} height={30} />
                 <div className="flex flex-row gap-1 w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Join Swipe Quest Pixel community </p>
                 </div>
@@ -239,7 +239,7 @@ const getData = async (id:bigint)=>{
                 <Money telegramId={userDetails.json.telegramId} moneyUrl={moneyUrl} />
               </div>
               <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
-          <Image src="https://ufts.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={40} height={40} className="rounded-md" />
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={40} height={40} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Launch Swipe Quest Pixel
                 </p>
