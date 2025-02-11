@@ -4,6 +4,7 @@ import BoostButton from "@/components/BoostChannel";
 import Community from "@/components/captch";
 import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
+import Dice from "@/components/Dice";
 import EmojiCheckButton from "@/components/EmojiCheck";
 import Erax from "@/components/Erax";
 import FollowButton from "@/components/followTwitter";
@@ -13,8 +14,6 @@ import Justin from "@/components/justin";
 import Judt from "@/components/justinCon";
 import Latest from "@/components/latestRt";
 import Main from "@/components/Main";
-import Money from "@/components/money";
-import MoneyCommunity from "@/components/MoneyCom";
 import Optimus from "@/components/Optimus";
 import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
@@ -62,13 +61,12 @@ const getData = async (id:bigint)=>{
     const sharkUrl = "https://t.me/captcha_airdrop_bot"
     const captha = 'https://t.me/CAPtchaANN'
     const shaCon = "https://x.com/thesharks_emoji?s=21"
-    const moneyUrl = 'https://t.me/brrrrrgamebot?start=67a620e26fc5be461c2024fe'
-    const moneygroup = 'https://t.me/brrrrren'
     const justiUrl = "https://t.me/swipe_quest_bot/swipe"
     const justinCon = "https://t.me/swipequest"
     const mete = "https://t.me/megaminetg_bot/megamine?startapp=5808920156"
     const shiba = "https://t.me/Shiba_Fishing_Bot/Shiba_Fishing?startapp=5SIS78O"
     const shibaCon = "https://t.me/ShibFishingCommunity"
+    const dice = "https://t.me/DiceSwap_Bot?start=Dm9oOdCpfN"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -181,13 +179,6 @@ const getData = async (id:bigint)=>{
                 <Community telegramId={userDetails.json.telegramId} telegramUrl={captha} />
               </div>
               <div className="flex flex-row items-center gap-1 p-3 justify-between border-b-[1.5px] border-text-color">
-              <Image src="https://utfs.io/f/MyBJHXY8aJsOzXI6KhRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" className="rounded-md" alt="youtube icon" width={30} height={30} />
-                <div className="flex flex-row gap-1 w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Brrrrr Community </p>
-                </div>
-                <MoneyCommunity telegramId={userDetails.json.telegramId} telegramUrl={moneygroup} />
-              </div>
-              <div className="flex flex-row items-center gap-1 p-3 justify-between border-b-[1.5px] border-text-color">
               <Image src="https://utfs.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" className="rounded-md" alt="youtube icon" width={30} height={30} />
                 <div className="flex flex-row gap-1 w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Join Swipe Quest Pixel community </p>
@@ -244,14 +235,6 @@ const getData = async (id:bigint)=>{
                 <Shark telegramId={userDetails.json.telegramId} sharkUrl={sharkUrl} />
               </div>
               <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
-          <Image src="https://utfs.io/f/MyBJHXY8aJsOzXI6KhRfgZCd6PjRV3BoS0xJLewTmUQh4pGE" alt="storm Image" width={40} height={40} className="rounded-md" />
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Play  Brrrrr
-                </p>
-                </div>
-                <Money telegramId={userDetails.json.telegramId} moneyUrl={moneyUrl} />
-              </div>
-              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
           <Image src="https://utfs.io/f/MyBJHXY8aJsOGjHLYmblurUy8Mb0VCNOD6g9Bpa7KvAeXQiz" alt="storm Image" width={40} height={40} className="rounded-md" />
                 <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm">Launch Swipe Quest Pixel
@@ -274,6 +257,14 @@ const getData = async (id:bigint)=>{
                 </p>
                 </div>
                 <Shiba telegramId={userDetails.json.telegramId} shibaUrl={shiba} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsO9uX53uOqWIAzfPBv8VxbTe4drSm60LGpMl2i" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Complete a task on DiceSwap
+                </p>
+                </div>
+                <Dice telegramId={userDetails.json.telegramId} diceUrl={dice} />
               </div>
           </CardContent>
         </Card>
