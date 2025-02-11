@@ -20,6 +20,8 @@ import ReactCommunity from "@/components/React";
 import RetweetButton from "@/components/RetweetButton";
 import ShaCommunity from "@/components/Sha";
 import Shark from "@/components/Shark";
+import Shiba from "@/components/SHiba";
+import ShibaCon from "@/components/shibacon";
 import StormCommunity from "@/components/StormCon";
 import Task from "@/components/Tassk";
 import ThirdRetweetButton from "@/components/ThirdRetweet";
@@ -65,6 +67,8 @@ const getData = async (id:bigint)=>{
     const justiUrl = "https://t.me/swipe_quest_bot/swipe"
     const justinCon = "https://t.me/swipequest"
     const mete = "https://t.me/megaminetg_bot/megamine?startapp=5808920156"
+    const shiba = "https://t.me/Shiba_Fishing_Bot/Shiba_Fishing?startapp=5SIS78O"
+    const shibaCon = "https://t.me/ShibFishingCommunity"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -190,6 +194,13 @@ const getData = async (id:bigint)=>{
                 </div>
                 <Judt telegramId={userDetails.json.telegramId} telegramUrl={justinCon} />
               </div>
+              <div className="flex flex-row items-center gap-1 p-3 justify-between border-b-[1.5px] border-text-color">
+              <Image src="https://utfs.io/f/MyBJHXY8aJsOybqt1IoDZchJ3KlPn1e5Xf0qYmz9sN2MrxBS" className="rounded-md" alt="youtube icon" width={30} height={30} />
+                <div className="flex flex-row gap-1 w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Join Shiba Fishing community </p>
+                </div>
+                <ShibaCon telegramId={userDetails.json.telegramId} telegramUrl={shibaCon} />
+              </div>
             </CardContent>
           </Card>
           </TabsContent>
@@ -255,6 +266,14 @@ const getData = async (id:bigint)=>{
                 </p>
                 </div>
                 <Main telegramId={userDetails.json.telegramId} mainUrl={mete} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOybqt1IoDZchJ3KlPn1e5Xf0qYmz9sN2MrxBS" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Launch Shiba Fishing
+                </p>
+                </div>
+                <Shiba telegramId={userDetails.json.telegramId} shibaUrl={shiba} />
               </div>
           </CardContent>
         </Card>
