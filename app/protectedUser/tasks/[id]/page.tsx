@@ -12,6 +12,7 @@ import JoinCommunity from "@/components/JoinCommunity";
 import Justin from "@/components/justin";
 import Judt from "@/components/justinCon";
 import Latest from "@/components/latestRt";
+import Main from "@/components/Main";
 import Money from "@/components/money";
 import MoneyCommunity from "@/components/MoneyCom";
 import Optimus from "@/components/Optimus";
@@ -63,6 +64,7 @@ const getData = async (id:bigint)=>{
     const moneygroup = 'https://t.me/brrrrren'
     const justiUrl = "https://t.me/swipe_quest_bot/swipe"
     const justinCon = "https://t.me/swipequest"
+    const mete = "https://t.me/megaminetg_bot/megamine?startapp=5808920156"
     return (
 
       <div className="bg-primary-bg p-4 w-full gap-8 flex flex-col justify-center items-center overflow-y-scroll h-fit mb-20">
@@ -245,6 +247,14 @@ const getData = async (id:bigint)=>{
                 </p>
                 </div>
                 <Justin telegramId={userDetails.json.telegramId} justinUrl={justiUrl} />
+              </div>
+              <div className="flex flex-row gap-1 items-center p-3 justify-between border-b-[1.5px] border-text-color">
+          <Image src="https://utfs.io/f/MyBJHXY8aJsOmciQhByvhJT621gucKPVvIoHjaEASW7qb3Yl" alt="storm Image" width={40} height={40} className="rounded-md" />
+                <div className="flex flex-col w-2/3">
+                <p className="font-Nohemi text-text-color text-sm">Launch Megamine
+                </p>
+                </div>
+                <Main telegramId={userDetails.json.telegramId} mainUrl={mete} />
               </div>
           </CardContent>
         </Card>
