@@ -2,7 +2,7 @@
 
 import useSWR from 'swr';
 import Image from 'next/image';
-import { ArrowRight, MedalIcon, UsersRound } from "lucide-react";
+import { ArrowRight, MedalIcon} from "lucide-react";
 import WalletConnect from "@/components/WalletConnect";
 import KoalaLottie from "@/components/koalaLottie";
 import Link from 'next/link';
@@ -53,13 +53,6 @@ export default function ProtectedPageUser({ params }: { params: { id: string } }
           <KoalaLottie />
         </div>
       </div>
-      <a className='border-0 bg-none ' href='https://t.me/RealslothHouse'>
-      <div className="flex bg-under-color items-center w-max justify-center flex-row gap-4 border-[1.5px] border-text-color p-3 rounded-md font-Nohemi text-text-color mb-4">
-        <UsersRound className="size-4" />
-        <p>Join the Sloth Community</p>
-        <ArrowRight className="size-4" />
-      </div>
-      </a>
       <Link href={`/protectedUser/tasks/${userDetails.json.telegramId}`} className="flex bg-under-color items-center w-max justify-center flex-row gap-4 border-[1.5px] border-text-color p-3 rounded-md font-Nohemi text-text-color">
         <MedalIcon className="size-4" />
         <p>Start Earning with Tasks</p>
