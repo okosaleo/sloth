@@ -6,24 +6,16 @@ import CheckReferralsButton from "@/components/CheckReferrals";
 import Deluck from "@/components/deluck";
 import Dice from "@/components/Dice";
 import EmojiCheckButton from "@/components/EmojiCheck";
-import Erax from "@/components/Erax";
-import FollowButton from "@/components/followTwitter";
 import FollowYoutube from "@/components/FollowYoutube";
-import JoinCommunity from "@/components/JoinCommunity";
 import Justin from "@/components/justin";
 import Judt from "@/components/justinCon";
-import Latest from "@/components/latestRt";
 import Main from "@/components/Main";
 import Optimus from "@/components/Optimus";
-import ReactCommunity from "@/components/React";
-import RetweetButton from "@/components/RetweetButton";
 import ShaCommunity from "@/components/Sha";
 import Shark from "@/components/Shark";
 import Shiba from "@/components/SHiba";
 import ShibaCon from "@/components/shibacon";
 import StormCommunity from "@/components/StormCon";
-import Task from "@/components/Tassk";
-import ThirdRetweetButton from "@/components/ThirdRetweet";
 import TimerButton from "@/components/TimedButton";
 import TopTasks from "@/components/TopTasks";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -44,19 +36,11 @@ const getData = async (id:bigint)=>{
   
   export default async function  TasksPage({params}:{params:{id:bigint}}) {
     const userDetails : any = await getData(params.id)
-    const xUrl= "https://x.com/slothupfam?s=11"
     const boostUrl = "https://t.me/boost/RealslothHouse"
-    const retweetUrl = "https://x.com/slothupfam/status/1868306187785289786?s=46&t=7XhUpaocxGD005ZNFokjmQ"
-    const telegramUrl = "https://t.me/RealslothHouse"
-    const reactUrl = "https://t.me/RealslothHouse/18"
-    const thirdRetweetUrl = "https://x.com/slothupfam/status/1873020767652188580?s=46&t=7XhUpaocxGD005ZNFokjmQ"
-    const taskUrl = "https://x.com/slothupfam/status/1875173594340463043?s=46&t=7XhUpaocxGD005ZNFokjmQ"
     const youUrl = "https://youtube.com/@slothupfam?si=CFfa2GF9zCZOpZlZ"
-    const neRetweet = "https://x.com/slothupfam/status/1878390637944287355?s=46&t=7XhUpaocxGD005ZNFokjmQ";
     const stormUrl = "https://t.me/StormTradeBot/academy?startapp=2m6KH9YPGDg1xGw1F3trW8hRHhncxtsCWvkB3p4Vo6h"
     const stormTask = "https://t.me/+ZZfRPrExxT9jMTUy"
     const optimus = "https://t.me/optimus_x_bot/app?startapp=94538a1c77"
-    const eraxUrl = "https://t.me/the_eraxbot?start=5808920156"
     const beeUrl = "https://t.me/Bee_coinbot"
     const sharkUrl = "https://t.me/captcha_airdrop_bot"
     const captha = 'https://t.me/CAPtchaANN'
@@ -98,24 +82,6 @@ const getData = async (id:bigint)=>{
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Follow us on X🦥</p>
-                </div>
-                <FollowButton telegramId={userDetails.json.telegramId} xUrl={xUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm ">Reweet pinned Sloth post🦥</p>
-                </div>
-                <RetweetButton telegramId={userDetails.json.telegramId} retweetUrl={retweetUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm ">Join our telegram Community🦥</p>
-                </div>
-                <JoinCommunity telegramId={userDetails.json.telegramId} telegramUrl={telegramUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
                 <p className="font-Nohemi text-text-color text-sm ">Invite 10 users for Sloth🦥</p>
                 </div>
                 <CheckReferralsButton telegramId={userDetails.json.telegramId} />
@@ -133,30 +99,6 @@ const getData = async (id:bigint)=>{
                 <p className="font-Nohemi text-text-color text-sm">Join Storm Trade news channel</p>
                 </div>
                 <StormCommunity telegramId={userDetails.json.telegramId} stormUrl={stormTask}  />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">React to post on channel</p>
-                </div>
-                <ReactCommunity telegramId={userDetails.json.telegramId} reactUrl={reactUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Like and Retweet our X post</p>
-                </div>
-                <ThirdRetweetButton telegramId={userDetails.json.telegramId} thirdRetweetUrl={thirdRetweetUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Like and Retweet our X post</p>
-                </div>
-                <Task telegramId={userDetails.json.telegramId} taskUrl={taskUrl} />
-              </div>
-              <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
-                <div className="flex flex-col w-2/3">
-                <p className="font-Nohemi text-text-color text-sm">Like and Retweet our latest post</p>
-                </div>
-                <Latest telegramId={userDetails.json.telegramId} neRtweetUrl={neRetweet} />
               </div>
               <div className="flex flex-row items-center p-3 justify-between border-b-[1.5px] border-text-color">
                 <div className="flex flex-col w-2/3">
