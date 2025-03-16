@@ -4,23 +4,24 @@ import { cookies } from 'next/headers'
 import { encrypt, SESSION_DURATION } from '@/utils/session'
 
 export async function POST(request: Request) {
-  const { initData } = await request.json()
-
-  const validationResult = validateTelegramWebAppData(initData)
+  const { initData } = await request.json();
+  const validationResult = validateTelegramWebAppData(initData);
 
   if (validationResult.validatedData) {
-    console.log("Validation result: ", validationResult)
-    const user = { telegramId: validationResult.user.id }
+    console.log("Validation result: ", validationResult);
+    const user = { telegramId: validationResult.user.id };
 
     // Create a new session
-    const expires = new Date(Date.now() + SESSION_DURATION)
-    const session = await encrypt({ user, expires })
+    const expires = new Date(Date.now() + SESSION_DURATION);
+    const session = await encrypt({ user, expires });
 
     // Save the session in a cookie
-    cookies().set("session", session, { expires, httpOnly: true })
+    console.log("Setting session cookie:", session);
+    cookies().set("session", session, { expires, httpOnly: true });
 
-    return NextResponse.json({ message: 'Authentication successful' })
+    return NextResponse.json({ message: "Authentication successful" });
   } else {
-    return NextResponse.json({ message: validationResult.message }, { status: 401 })
+    console.log("Validation failed:", validationResult.message);
+    return NextResponse.json({ message: validationResult.message }, { status: 401 });
   }
 }
